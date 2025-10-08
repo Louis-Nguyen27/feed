@@ -11,6 +11,9 @@
     </main>
 </template>
 <script setup lang="ts">
+definePageMeta({
+    scrollToTop: false
+})
 import PostCard from '~/components/PostCard.vue';
 import type { Post } from '~/types/post';
 
@@ -41,7 +44,6 @@ onActivated(() => {
     console.log('hi')
     window.scroll({top: sp.value})
 })
-
 
 
 </script>

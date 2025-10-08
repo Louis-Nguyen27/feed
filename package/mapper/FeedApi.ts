@@ -8,6 +8,6 @@ export class FeedApi {
     }
 
     public getGeneralFeed() {
-        return this.httpClient.get<any>('', {}, true, false);
+        return this.httpClient.get<any>('/newfeed', {}, true, false);
     }
 }

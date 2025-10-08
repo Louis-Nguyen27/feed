@@ -1,13 +1,21 @@
 <script setup lang="ts">
-import { useFeedService } from '~/composables/useFeedService';
-
 const feedService = useFeedService();
-feedService.getGeneralFeed().then(res => {
-    console.log(res);
-});
+
+const { data } = await feedService.getGeneralFeed();
+
+console.log(data)
+
 </script>
 
 <template>
+    <div>
+        <div v-for="item in data" :key="item.id">
+            <div>{{ item.id }}</div>
+            <div>{{ item.name }}</div>
+            <div>{{ item.content }}</div>
+            <hr />
+        </div>
+    </div>
     <div>
         Hello General Feed
     </div>

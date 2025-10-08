@@ -7,9 +7,9 @@ export class HttpClient {
     private httpClient: AxiosInstance;
     private accessToken: string = '';
 
-    constructor(context: ApplicationContext){
+    constructor(context: ApplicationContext) {
         this.httpClient = axios.create({
-            baseURL: context.getUrl(),
+            baseURL: context.getBaseUrl(),
             timeout: 10000,
             headers: {'Content-Type': 'application/json'}
         })

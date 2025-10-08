@@ -1,11 +1,12 @@
 import { ApplicationContext } from "~/package/application/ApplicationContext";
 
 export default defineNuxtPlugin(nuxtApp => {
-    const customApplicationContext = new ApplicationContext();
-
+    const customApplicationContext = ApplicationContext.getInstance();
+    console.log('Nuxt Plugin feed applicationContext');
+    customApplicationContext.setServices();
     return {
         provide: {
-            customContainer: customApplicationContext
+            customApplicationContext: customApplicationContext
         }
     }
 });
